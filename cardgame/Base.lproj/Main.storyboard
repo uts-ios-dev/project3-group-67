@@ -30,7 +30,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQg-eP-tYx">
                                         <rect key="frame" x="138" y="1" width="138" height="53"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                        <state key="normal" title="重新開始"/>
+                                        <state key="normal" title="RESTART"/>
                                         <connections>
                                             <action selector="reStart:" destination="BYZ-38-t0r" eventType="touchDown" id="ctC-4K-0mD"/>
                                         </connections>
@@ -60,20 +60,20 @@
                                                     <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AaZ-d1-eRc"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card2" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Bj-Ip-NlY">
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="cardv3" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QyZ-vl-DVb">
                                                 <rect key="frame" x="94.666666666666686" y="0.0" width="90" height="122.33333333333333"/>
                                                 <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" image="神奇寶貝球"/>
                                                 <connections>
-                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RTT-e5-Gve"/>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xyy-cv-5IU"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="cardv3" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QyZ-vl-DVb">
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card2" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Bj-Ip-NlY">
                                                 <rect key="frame" x="-20" y="0.0" width="89.666666666666671" height="122.33333333333333"/>
                                                 <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" image="神奇寶貝球"/>
                                                 <connections>
-                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xyy-cv-5IU"/>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RTT-e5-Gve"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card4" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3b-ub-1YI">
