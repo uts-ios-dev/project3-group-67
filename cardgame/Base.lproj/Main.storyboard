@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Card View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CardViewController" customModule="cardgame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PKq-I8-8bF">
+                                <rect key="frame" x="0.0" y="20" width="414" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="時間" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCd-AB-OBV">
+                                        <rect key="frame" x="0.0" y="17.333333333333336" width="138" height="20.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQg-eP-tYx">
+                                        <rect key="frame" x="138" y="1" width="138" height="53"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                        <state key="normal" title="重新開始"/>
+                                        <connections>
+                                            <action selector="reStart:" destination="BYZ-38-t0r" eventType="touchDown" id="ctC-4K-0mD"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="得分" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgR-hl-p6O">
+                                        <rect key="frame" x="276" y="17.333333333333336" width="138" height="20.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="jxq-t8-SeI"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="znj-Ss-gbr">
+                                <rect key="frame" x="20" y="85" width="374" height="631"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="sK3-FG-L0A">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="122.33333333333333"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card1" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufy-G4-Bup">
+                                                <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="122.33333333333333"/>
+                                                <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="神奇寶貝球"/>
+                                                <connections>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AaZ-d1-eRc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card2" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Bj-Ip-NlY">
+                                                <rect key="frame" x="94.666666666666686" y="0.0" width="90" height="122.33333333333333"/>
+                                                <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="神奇寶貝球"/>
+                                                <connections>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RTT-e5-Gve"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="cardv3" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QyZ-vl-DVb">
+                                                <rect key="frame" x="-20" y="0.0" width="89.666666666666671" height="122.33333333333333"/>
+                                                <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="神奇寶貝球"/>
+                                                <connections>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xyy-cv-5IU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card4" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3b-ub-1YI">
+                                                <rect key="frame" x="284.33333333333331" y="0.0" width="89.666666666666686" height="122.33333333333333"/>
+                                                <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="神奇寶貝球"/>
+                                                <connections>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zgc-mm-vDU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="sMk-m7-aD1">
+                                        <rect key="frame" x="0.0" y="127.33333333333334" width="374" height="122"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card5" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNI-ju-bNG">
+                                                <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="122"/>
+                                                <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="神奇寶貝球"/>
+                                                <connections>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CHQ-9B-6rj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card6" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0g-bh-xHK">
+                                                <rect key="frame" x="94.666666666666686" y="0.0" width="90" height="122"/>
+                                                <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="神奇寶貝球"/>
+                                                <connections>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EUq-EA-rND"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card7" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oex-AS-ZSP">
+                                                <rect key="frame" x="-20" y="0.0" width="89.666666666666671" height="122"/>
+                                                <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="神奇寶貝球"/>
+                                                <connections>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eS3-n3-Zfb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card8" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUJ-Wh-ElH">
+                                                <rect key="frame" x="284.33333333333331" y="0.0" width="89.666666666666686" height="122"/>
+                                                <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="神奇寶貝球"/>
+                                                <connections>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Fl-IF-7qD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zQP-0A-vgk">
+                                        <rect key="frame" x="0.0" y="254.33333333333334" width="374" height="122.33333333333334"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card9" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQU-dd-mKD">
+                                                <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="122.33333333333333"/>
+                                                <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="神奇寶貝球"/>
+                                                <connections>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v81-gz-q5O"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card10" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OzL-7q-ptu">
+                                                <rect key="frame" x="94.666666666666686" y="0.0" width="90" height="122.33333333333333"/>
+                                                <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="神奇寶貝球"/>
+                                                <connections>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pXN-6f-jnm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card11" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CsJ-vD-Gw8">
+                                                <rect key="frame" x="-20" y="0.0" width="89.666666666666671" height="122.33333333333333"/>
+                                                <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="神奇寶貝球"/>
+                                                <connections>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ow-kp-0bg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card12" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXp-Je-6hQ">
+                                                <rect key="frame" x="284.33333333333331" y="0.0" width="89.666666666666686" height="122.33333333333333"/>
+                                                <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="神奇寶貝球"/>
+                                                <connections>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CCz-dM-bGN"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LMV-wD-4yl">
+                                        <rect key="frame" x="0.0" y="381.66666666666669" width="374" height="122"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card13" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsv-iq-Ilp">
+                                                <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="122"/>
+                                                <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="神奇寶貝球"/>
+                                                <connections>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wiz-Gv-tzE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card14" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xo8-l0-8pP">
+                                                <rect key="frame" x="94.666666666666686" y="0.0" width="90" height="122"/>
+                                                <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="神奇寶貝球"/>
+                                                <connections>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3ez-Me-wgo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card15" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ist-Js-te0">
+                                                <rect key="frame" x="-20" y="0.0" width="89.666666666666671" height="122"/>
+                                                <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="神奇寶貝球"/>
+                                                <connections>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GXb-So-ocn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card16" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HO2-1R-hF4">
+                                                <rect key="frame" x="284.33333333333331" y="0.0" width="89.666666666666686" height="122"/>
+                                                <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="神奇寶貝球"/>
+                                                <connections>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sno-Go-WWd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="b6w-wb-L45">
+                                        <rect key="frame" x="0.0" y="508.66666666666657" width="374" height="122.33333333333331"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card17" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CoB-Fp-ODo">
+                                                <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="122.33333333333333"/>
+                                                <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="神奇寶貝球"/>
+                                                <connections>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w9V-02-Qgg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card18" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6B-cG-AXi">
+                                                <rect key="frame" x="94.666666666666686" y="0.0" width="90" height="122.33333333333333"/>
+                                                <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="神奇寶貝球"/>
+                                                <connections>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hGE-Ng-wyr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card19" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cp-ey-r7d">
+                                                <rect key="frame" x="-20" y="0.0" width="89.666666666666671" height="122.33333333333333"/>
+                                                <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="神奇寶貝球"/>
+                                                <connections>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ypA-SM-AbN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="card20" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7c-Pk-AP4">
+                                                <rect key="frame" x="284.33333333333331" y="0.0" width="89.666666666666686" height="122.33333333333333"/>
+                                                <color key="backgroundColor" red="0.7589565264" green="0.99070856249999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="神奇寶貝球"/>
+                                                <connections>
+                                                    <action selector="cardSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1AK-6c-AU2"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnu-Tn-3Vu">
+                                <rect key="frame" x="50" y="125" width="314" height="561"/>
+                                <color key="backgroundColor" red="0.98599884149999995" green="1" blue="0.13417847120000001" alpha="0.74502354452054798" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="50"/>
+                                <color key="textColor" red="1" green="0.11326920159999999" blue="0.14406837780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTj-KC-t8g">
+                                <rect key="frame" x="50" y="125" width="314" height="561"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="400"/>
+                                <color key="textColor" red="1" green="0.11326920159999999" blue="0.14406837780000001" alpha="0.26003317636986301" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fnu-Tn-3Vu" secondAttribute="bottom" constant="50" id="3FV-qZ-m9q"/>
+                            <constraint firstItem="PKq-I8-8bF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9uY-PC-APh"/>
+                            <constraint firstItem="fnu-Tn-3Vu" firstAttribute="top" secondItem="PKq-I8-8bF" secondAttribute="bottom" constant="50" id="E6v-bp-Kzo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fnu-Tn-3Vu" secondAttribute="trailing" constant="50" id="G0v-Jo-sL2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="znj-Ss-gbr" secondAttribute="bottom" constant="20" id="JHX-NQ-7XG"/>
+                            <constraint firstItem="znj-Ss-gbr" firstAttribute="top" secondItem="PKq-I8-8bF" secondAttribute="bottom" constant="10" id="VGu-dX-LYh"/>
+                            <constraint firstItem="PKq-I8-8bF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Z3c-Dz-4IB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PKq-I8-8bF" secondAttribute="trailing" id="eIk-in-5A9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="znj-Ss-gbr" secondAttribute="trailing" constant="20" id="kA6-tD-1NP"/>
+                            <constraint firstItem="znj-Ss-gbr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kN5-wG-tRp"/>
+                            <constraint firstItem="fnu-Tn-3Vu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="xvb-rP-nMy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="CardBt1" destination="ufy-G4-Bup" id="kE2-Lx-q0M"/>
+                        <outlet property="CardBt10" destination="OzL-7q-ptu" id="OqD-0m-PPF"/>
+                        <outlet property="CardBt11" destination="CsJ-vD-Gw8" id="TD8-gj-1aa"/>
+                        <outlet property="CardBt12" destination="gXp-Je-6hQ" id="AsF-A1-NaO"/>
+                        <outlet property="CardBt13" destination="gsv-iq-Ilp" id="TQp-U7-Rru"/>
+                        <outlet property="CardBt14" destination="Xo8-l0-8pP" id="KH8-bq-Fs4"/>
+                        <outlet property="CardBt15" destination="ist-Js-te0" id="utq-Ch-0kM"/>
+                        <outlet property="CardBt16" destination="HO2-1R-hF4" id="dEr-sP-FCz"/>
+                        <outlet property="CardBt17" destination="CoB-Fp-ODo" id="7pE-L3-j4E"/>
+                        <outlet property="CardBt18" destination="V6B-cG-AXi" id="cQN-Ir-m8D"/>
+                        <outlet property="CardBt19" destination="1cp-ey-r7d" id="26W-Kc-ths"/>
+                        <outlet property="CardBt2" destination="2Bj-Ip-NlY" id="ZWT-XZ-WC2"/>
+                        <outlet property="CardBt20" destination="J7c-Pk-AP4" id="SGg-DZ-1U1"/>
+                        <outlet property="CardBt3" destination="QyZ-vl-DVb" id="uTR-3f-80u"/>
+                        <outlet property="CardBt4" destination="v3b-ub-1YI" id="suc-vU-xR3"/>
+                        <outlet property="CardBt5" destination="eNI-ju-bNG" id="gjb-ev-oAr"/>
+                        <outlet property="CardBt6" destination="S0g-bh-xHK" id="hJI-Ww-7o3"/>
+                        <outlet property="CardBt7" destination="Oex-AS-ZSP" id="X2i-wx-wgH"/>
+                        <outlet property="CardBt8" destination="RUJ-Wh-ElH" id="fur-bK-Yme"/>
+                        <outlet property="CardBt9" destination="gQU-dd-mKD" id="w00-Bd-9cU"/>
+                        <outlet property="countdownLable" destination="XTj-KC-t8g" id="jSb-Cu-jCj"/>
+                        <outlet property="resultLable" destination="fnu-Tn-3Vu" id="FLp-ir-VON"/>
+                        <outlet property="scoreLable" destination="DgR-hl-p6O" id="2JV-W9-7zD"/>
+                        <outlet property="timeLable" destination="uCd-AB-OBV" id="5IO-3Z-uf9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="166.66666666666669" y="128.80434782608697"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="神奇寶貝球" width="315" height="315"/>
+    </resources>
+</document>
