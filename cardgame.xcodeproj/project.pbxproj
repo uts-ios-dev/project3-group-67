@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A839131D20B0740700F3116D /* SimpleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A839131C20B0740700F3116D /* SimpleViewController.swift */; };
 		D990401B20753FDB00A47F56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D990401A20753FDB00A47F56 /* AppDelegate.swift */; };
 		D990401D20753FDB00A47F56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D990401C20753FDB00A47F56 /* ViewController.swift */; };
 		D990402020753FDB00A47F56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D990401E20753FDB00A47F56 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A839131C20B0740700F3116D /* SimpleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewController.swift; sourceTree = "<group>"; };
 		D990401720753FDB00A47F56 /* cardgame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cardgame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D990401A20753FDB00A47F56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D990401C20753FDB00A47F56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				D990401A20753FDB00A47F56 /* AppDelegate.swift */,
 				D990401C20753FDB00A47F56 /* ViewController.swift */,
 				D990401E20753FDB00A47F56 /* Main.storyboard */,
+				A839131C20B0740700F3116D /* SimpleViewController.swift */,
 				D990404C207CE32300A47F56 /* CardViewController.swift */,
 				D990402120753FDB00A47F56 /* Assets.xcassets */,
 				D990402320753FDB00A47F56 /* LaunchScreen.storyboard */,
@@ -191,7 +194,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = calvin.chang;
 				TargetAttributes = {
 					D990401620753FDB00A47F56 = {
@@ -264,6 +267,7 @@
 			files = (
 				D990401D20753FDB00A47F56 /* ViewController.swift in Sources */,
 				D990401B20753FDB00A47F56 /* AppDelegate.swift in Sources */,
+				A839131D20B0740700F3116D /* SimpleViewController.swift in Sources */,
 				D990404D207CE32300A47F56 /* CardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +337,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -340,6 +345,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -390,6 +396,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -397,6 +404,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -431,11 +439,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M7VC9D4VRK;
+				DEVELOPMENT_TEAM = TXA5XBT328;
 				INFOPLIST_FILE = cardgame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.calvin.cardgame;
+				PRODUCT_BUNDLE_IDENTIFIER = "UTS.CardFlipping-Joy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -447,11 +455,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M7VC9D4VRK;
+				DEVELOPMENT_TEAM = TXA5XBT328;
 				INFOPLIST_FILE = cardgame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.calvin.cardgame;
+				PRODUCT_BUNDLE_IDENTIFIER = "UTS.CardFlipping-Joy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  cardgame
 //
-//  Created by calvin.chang on 2018/4/5.
-//  Copyright © 2018年 calvin.chang. All rights reserved.
+//  Created by Jiayi Shi on 2018/4/5.
+//  Copyright © 2018年 UTS. All rights reserved.
 //
 
 import UIKit
