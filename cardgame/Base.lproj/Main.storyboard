@@ -348,7 +348,7 @@
                                             <color key="titleColor" red="0.92244821786880493" green="0.44637417793273926" blue="0.5974089503288269" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="G1B-Vv-i4Z" kind="show" id="EPZ-r7-zJJ"/>
+                                            <segue destination="G1B-Vv-i4Z" kind="show" id="Fku-Ef-efS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfo-CW-Bsa">
@@ -400,7 +400,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i22-D7-JFJ" userLabel="BaseBG">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BaseBG" translatesAutoresizingMaskIntoConstraints="NO" id="i22-D7-JFJ" userLabel="BaseBG">
                                 <rect key="frame" x="0.0" y="75" width="414" height="661"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fT5-cR-mEX">
@@ -597,9 +597,6 @@
                         <outlet property="CardBt10" destination="ZQl-IS-ufL" id="vaI-nu-poR"/>
                         <outlet property="CardBt11" destination="AjS-wS-bdA" id="2v2-8B-l0J"/>
                         <outlet property="CardBt12" destination="IKp-Rv-ELi" id="vo3-LN-y0R"/>
-                        <outlet property="CardBt13" destination="ZQl-IS-ufL" id="jtg-MW-PZt"/>
-                        <outlet property="CardBt14" destination="AjS-wS-bdA" id="iu2-gQ-D1G"/>
-                        <outlet property="CardBt15" destination="IKp-Rv-ELi" id="Vu8-Ec-wAE"/>
                         <outlet property="CardBt2" destination="dKs-D0-1lb" id="Ibz-8X-pWd"/>
                         <outlet property="CardBt3" destination="osy-Tq-bOr" id="bEE-T4-uij"/>
                         <outlet property="CardBt4" destination="3Xc-DC-Cnu" id="sJd-Cv-awp"/>
@@ -622,6 +619,7 @@
     </scenes>
     <resources>
         <image name="BackButton" width="709" height="709"/>
+        <image name="BaseBG" width="1024" height="768"/>
         <image name="MainBack" width="700" height="1000"/>
         <image name="X12" width="330" height="233"/>
         <image name="X20" width="330" height="233"/>

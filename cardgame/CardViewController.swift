@@ -97,7 +97,7 @@ class CardViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        baseBG.image = #imageLiteral(resourceName: "BaseBG")
+//        baseBG.image = #imageLiteral(resourceName: "BaseBG")
 
         // Do any additional setup after loading the view.
         CardBt = [CardBt1, CardBt2, CardBt3, CardBt4, CardBt5, CardBt6, CardBt7, CardBt8, CardBt9, CardBt10, CardBt11, CardBt12, CardBt13, CardBt14, CardBt15, CardBt16, CardBt17, CardBt18, CardBt19, CardBt20]
