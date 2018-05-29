@@ -8,6 +8,7 @@
 
 import UIKit
 import GameplayKit
+import AVFoundation
 
 class SimpleViewController: UIViewController {
 
@@ -29,7 +30,8 @@ class SimpleViewController: UIViewController {
     @IBOutlet weak var countdownLable: UILabel!
     @IBOutlet weak var baseBG: UIImageView!
     
-    
+    var AudioPlayer: AVAudioPlayer?
+    var FlippingSound: AVAudioPlayer?
     var CardBt : [UIButton] = [UIButton]()
     
     let CardImage: [[UIImage]] = [
@@ -90,29 +92,22 @@ class SimpleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         baseBG.image = #imageLiteral(resourceName: "BaseBG")
-        
-        // Do any additional setup after loading the view.
         CardBt = [CardBt1, CardBt2, CardBt3, CardBt4, CardBt5, CardBt6, CardBt7, CardBt8, CardBt9, CardBt10, CardBt11, CardBt12]
-        
+        let AssortedMusics = NSURL(fileURLWithPath: Bundle.main.path(forResource: "Game", ofType: "mp3")!)
+        AudioPlayer = try! AVAudioPlayer(contentsOf: AssortedMusics as URL)
+        AudioPlayer!.prepareToPlay()
+        AudioPlayer!.numberOfLoops = -1
+        AudioPlayer!.play()
         creatTopic()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        AudioPlayer!.stop()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
     
     @IBAction func reStart(_ sender: Any) {
         creatTopic()
@@ -120,6 +115,7 @@ class SimpleViewController: UIViewController {
     
     @IBAction func cardSelect(_ sender: UIButton) {
         var cardNumber:Int = 0
+        playSound()
         
         for i in 0...(CardBt.count-1){
             if(sender.restorationIdentifier! == CardBt[i].restorationIdentifier!){
@@ -145,8 +141,7 @@ class SimpleViewController: UIViewController {
                         self.score+=100
                         self.bingoNumber+=1
                         
-                        //print("bingoNumber=\(bingoNumber)")
-                        if(self.bingoNumber >= 5){
+                        if(self.bingoNumber >= 6){
                             self.timer.invalidate()
                             self.gameStep=0
                             
@@ -162,7 +157,7 @@ class SimpleViewController: UIViewController {
                             let minisecondsLeft = Int(self.counter*10) % 10
                             let total = self.score - Int(self.counter)
                             self.resultLable.isHidden=false
-                            self.resultLable.text=String(format: "Congratulations!\nGame Result\n\nTime Cosumed\n%02d:%02d.%01d\n\nScore\n%d\n\nTotal\n%d", minutesLeft ,secondsLeft, minisecondsLeft,self.score,total)
+                            self.resultLable.text=String(format: "Good Job!\nTime Cosumed\n%02d:%02d.%01d\n\nScore\n%d\n\nTotal\n%d", minutesLeft ,secondsLeft, minisecondsLeft,self.score,total)
                         }
                     }else{
                         self.score-=10
@@ -274,6 +269,32 @@ class SimpleViewController: UIViewController {
         }
         else{
             countdownLable.text = String(5 - Int(counter))
+        }
+    }
+    
+    func playSound(){
+        guard let url = Bundle.main.url(forResource: "Flipping", withExtension: "mp3") else {
+            print("url not found")
+            return
+        }
+        
+        do {
+            /// this codes for making this app ready to takeover the device audio
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            /// change fileTypeHint according to the type of your audio file (you can omit this)
+            
+            /// for iOS 11 onward, use :
+            FlippingSound = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            /// else :
+            /// FlippingSound = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3)
+            
+            // no need for prepareToPlay because prepareToPlay is happen automatically when calling play()
+            FlippingSound!.play()
+        } catch let error as NSError {
+            print("error: \(error.localizedDescription)")
         }
     }
 }

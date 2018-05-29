@@ -261,9 +261,8 @@
                                 <color key="textColor" red="0.32056093215942383" green="0.29974314570426941" blue="0.41711121797561646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTj-KC-t8g">
-                                <rect key="frame" x="50" y="125" width="314" height="561"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTj-KC-t8g">
+                                <rect key="frame" x="121.66666666666669" y="155.99999999999997" width="171" height="424.33333333333326"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="300"/>
                                 <color key="textColor" red="0.41228586439999998" green="0.4017816186" blue="0.69144403929999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -277,7 +276,9 @@
                             <constraint firstItem="fnu-Tn-3Vu" firstAttribute="top" secondItem="PKq-I8-8bF" secondAttribute="bottom" constant="50" id="E6v-bp-Kzo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sdk-zv-YsE" secondAttribute="trailing" id="EvT-Hk-FoN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fnu-Tn-3Vu" secondAttribute="trailing" constant="50" id="G0v-Jo-sL2"/>
+                            <constraint firstItem="XTj-KC-t8g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HQ4-1B-vsr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="znj-Ss-gbr" secondAttribute="bottom" constant="20" id="JHX-NQ-7XG"/>
+                            <constraint firstItem="XTj-KC-t8g" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PEl-mg-gJT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Sdk-zv-YsE" secondAttribute="bottom" id="TlQ-ln-R9w"/>
                             <constraint firstItem="znj-Ss-gbr" firstAttribute="top" secondItem="PKq-I8-8bF" secondAttribute="bottom" constant="10" id="VGu-dX-LYh"/>
                             <constraint firstItem="PKq-I8-8bF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Z3c-Dz-4IB"/>
@@ -375,10 +376,11 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <color key="backgroundColor" red="0.72129398584365845" green="0.86243945360183716" blue="0.91105741262435913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uNU-gJ-uUn" firstAttribute="bottom" secondItem="8DL-bU-VGJ" secondAttribute="bottom" id="3Sa-v4-yOp"/>
                             <constraint firstItem="k4J-tO-fdf" firstAttribute="top" secondItem="8DL-bU-VGJ" secondAttribute="top" constant="100" id="4F2-zD-c89"/>
-                            <constraint firstItem="uNU-gJ-uUn" firstAttribute="top" secondItem="8DL-bU-VGJ" secondAttribute="top" id="Mfx-Wi-BKv"/>
+                            <constraint firstItem="uNU-gJ-uUn" firstAttribute="top" secondItem="tR5-Jt-K8w" secondAttribute="top" constant="20" id="Mfx-Wi-BKv"/>
                             <constraint firstItem="uNU-gJ-uUn" firstAttribute="trailing" secondItem="8DL-bU-VGJ" secondAttribute="trailing" id="Z96-j4-a3z"/>
                             <constraint firstItem="8DL-bU-VGJ" firstAttribute="bottom" secondItem="k4J-tO-fdf" secondAttribute="bottom" constant="100" id="do4-c3-bmH"/>
                             <constraint firstItem="8DL-bU-VGJ" firstAttribute="trailing" secondItem="k4J-tO-fdf" secondAttribute="trailing" constant="30" id="luu-ze-9ku"/>
@@ -406,15 +408,16 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fT5-cR-mEX">
                                 <rect key="frame" x="0.0" y="20" width="414" height="55"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsz-EP-y1F">
-                                        <rect key="frame" x="0.0" y="13.999999999999998" width="138" height="27.333333333333329"/>
-                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFg-gS-aSx">
+                                        <rect key="frame" x="0.0" y="0.0" width="103.66666666666667" height="55"/>
+                                        <inset key="contentEdgeInsets" minX="15" minY="-10" maxX="15" maxY="0.0"/>
+                                        <state key="normal" image="BackButton"/>
+                                        <connections>
+                                            <segue destination="yJd-3u-TCH" kind="show" id="9ji-F5-YlM"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgV-kL-47v">
-                                        <rect key="frame" x="138" y="1.6666666666666679" width="138" height="52"/>
+                                        <rect key="frame" x="103.66666666666669" y="1.6666666666666679" width="103.33333333333331" height="52"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="25"/>
                                         <state key="normal" title="Restart">
@@ -424,8 +427,15 @@
                                             <action selector="reStart:" destination="G1B-Vv-i4Z" eventType="touchDown" id="AZs-dY-b48"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsz-EP-y1F">
+                                        <rect key="frame" x="206.99999999999997" y="13.999999999999998" width="103.66666666666666" height="27.333333333333329"/>
+                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4p-cK-Jz6">
-                                        <rect key="frame" x="276" y="13.999999999999998" width="138" height="27.333333333333329"/>
+                                        <rect key="frame" x="310.66666666666669" y="13.999999999999998" width="103.33333333333331" height="27.333333333333329"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -564,9 +574,8 @@
                                 <color key="textColor" red="0.32056093215942383" green="0.29974314570426941" blue="0.41711121797561646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5FJ-cQ-9cm">
-                                <rect key="frame" x="50" y="125" width="314" height="561"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5FJ-cQ-9cm">
+                                <rect key="frame" x="121.66666666666669" y="155.99999999999997" width="171" height="424.33333333333326"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="300"/>
                                 <color key="textColor" red="0.41228586439999998" green="0.4017816186" blue="0.69144403929999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -582,11 +591,13 @@
                             <constraint firstItem="fT5-cR-mEX" firstAttribute="leading" secondItem="7rr-Ay-jVw" secondAttribute="leading" id="MAM-Tg-xuI"/>
                             <constraint firstItem="7rr-Ay-jVw" firstAttribute="trailing" secondItem="fT5-cR-mEX" secondAttribute="trailing" id="Qoi-Dn-OLz"/>
                             <constraint firstItem="7rr-Ay-jVw" firstAttribute="trailing" secondItem="Rga-hy-DuU" secondAttribute="trailing" constant="20" id="Sxq-lH-IRx"/>
+                            <constraint firstItem="5FJ-cQ-9cm" firstAttribute="centerY" secondItem="hk6-Qj-JDs" secondAttribute="centerY" id="UVi-8z-mjz"/>
                             <constraint firstItem="7rr-Ay-jVw" firstAttribute="trailing" secondItem="i22-D7-JFJ" secondAttribute="trailing" id="YoF-4y-84M"/>
                             <constraint firstItem="7rr-Ay-jVw" firstAttribute="bottom" secondItem="tJT-6N-maq" secondAttribute="bottom" constant="50" id="Z34-MV-D8r"/>
                             <constraint firstItem="i22-D7-JFJ" firstAttribute="top" secondItem="fT5-cR-mEX" secondAttribute="bottom" id="acy-ta-cPd"/>
                             <constraint firstItem="tJT-6N-maq" firstAttribute="leading" secondItem="7rr-Ay-jVw" secondAttribute="leading" constant="50" id="dGh-CX-YyZ"/>
                             <constraint firstItem="7rr-Ay-jVw" firstAttribute="bottom" secondItem="i22-D7-JFJ" secondAttribute="bottom" id="jEN-Eo-xux"/>
+                            <constraint firstItem="5FJ-cQ-9cm" firstAttribute="centerX" secondItem="hk6-Qj-JDs" secondAttribute="centerX" id="jLQ-HW-9ZS"/>
                             <constraint firstItem="tJT-6N-maq" firstAttribute="top" secondItem="fT5-cR-mEX" secondAttribute="bottom" constant="50" id="vDl-Ds-QRN"/>
                             <constraint firstItem="Rga-hy-DuU" firstAttribute="top" secondItem="fT5-cR-mEX" secondAttribute="bottom" constant="10" id="zhO-SB-6Fv"/>
                         </constraints>
@@ -614,7 +625,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2v-IV-0MP" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-183" y="836"/>
+            <point key="canvasLocation" x="-184.05797101449278" y="835.59782608695662"/>
         </scene>
     </scenes>
     <resources>
@@ -625,4 +636,7 @@
         <image name="X20" width="330" height="233"/>
         <image name="background" width="487" height="789"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="9ji-F5-YlM"/>
+    </inferredMetricsTieBreakers>
 </document>
