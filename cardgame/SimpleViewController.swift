@@ -93,11 +93,26 @@ class SimpleViewController: UIViewController {
         super.viewDidLoad()
         baseBG.image = #imageLiteral(resourceName: "BaseBG")
         CardBt = [CardBt1, CardBt2, CardBt3, CardBt4, CardBt5, CardBt6, CardBt7, CardBt8, CardBt9, CardBt10, CardBt11, CardBt12]
-        let AssortedMusics = NSURL(fileURLWithPath: Bundle.main.path(forResource: "Game", ofType: "mp3")!)
-        AudioPlayer = try! AVAudioPlayer(contentsOf: AssortedMusics as URL)
-        AudioPlayer!.prepareToPlay()
-        AudioPlayer!.numberOfLoops = -1
-        AudioPlayer!.play()
+        guard let url = Bundle.main.url(forResource: "Game", withExtension: "mp3") else {
+            print("url not found")
+            return
+        }
+        
+        do {
+            /// this codes for making this app ready to takeover the device audio
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            /// change fileTypeHint according to the type of your audio file (you can omit this)
+            
+            /// for iOS 11 onward, use :
+            AudioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            AudioPlayer!.prepareToPlay()
+            AudioPlayer!.numberOfLoops = -1
+            AudioPlayer!.play()
+        } catch let error as NSError {
+            print("error: \(error.localizedDescription)")
+        }
         creatTopic()
     }
     

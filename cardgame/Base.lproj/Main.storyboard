@@ -331,7 +331,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainBack" translatesAutoresizingMaskIntoConstraints="NO" id="uNU-gJ-uUn">
-                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="k4J-tO-fdf">
                                 <rect key="frame" x="30" y="120" width="354" height="516"/>
@@ -380,7 +380,7 @@
                         <constraints>
                             <constraint firstItem="uNU-gJ-uUn" firstAttribute="bottom" secondItem="8DL-bU-VGJ" secondAttribute="bottom" id="3Sa-v4-yOp"/>
                             <constraint firstItem="k4J-tO-fdf" firstAttribute="top" secondItem="8DL-bU-VGJ" secondAttribute="top" constant="100" id="4F2-zD-c89"/>
-                            <constraint firstItem="uNU-gJ-uUn" firstAttribute="top" secondItem="tR5-Jt-K8w" secondAttribute="top" constant="20" id="Mfx-Wi-BKv"/>
+                            <constraint firstItem="uNU-gJ-uUn" firstAttribute="top" secondItem="tR5-Jt-K8w" secondAttribute="top" id="Mfx-Wi-BKv"/>
                             <constraint firstItem="uNU-gJ-uUn" firstAttribute="trailing" secondItem="8DL-bU-VGJ" secondAttribute="trailing" id="Z96-j4-a3z"/>
                             <constraint firstItem="8DL-bU-VGJ" firstAttribute="bottom" secondItem="k4J-tO-fdf" secondAttribute="bottom" constant="100" id="do4-c3-bmH"/>
                             <constraint firstItem="8DL-bU-VGJ" firstAttribute="trailing" secondItem="k4J-tO-fdf" secondAttribute="trailing" constant="30" id="luu-ze-9ku"/>
