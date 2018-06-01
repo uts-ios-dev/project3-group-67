@@ -41,7 +41,7 @@ class CardViewController: UIViewController {
     var AudioPlayer: AVAudioPlayer?
     var FlippingSound: AVAudioPlayer?
     var CardBt : [UIButton] = [UIButton]()
-    
+    //
     let CardImage: [[UIImage]] = [
         [
             UIImage(named: "background.png")!,
@@ -101,7 +101,6 @@ class CardViewController: UIViewController {
         super.viewDidLoad()
         baseBG.image = #imageLiteral(resourceName: "BaseBG")
 
-        // Do any additional setup after loading the view.
         CardBt = [CardBt1, CardBt2, CardBt3, CardBt4, CardBt5, CardBt6, CardBt7, CardBt8, CardBt9, CardBt10, CardBt11, CardBt12, CardBt13, CardBt14, CardBt15, CardBt16, CardBt17, CardBt18, CardBt19, CardBt20]
         guard let url = Bundle.main.url(forResource: "Game", withExtension: "mp3") else {
             print("url not found")
@@ -112,10 +111,9 @@ class CardViewController: UIViewController {
             /// this codes for making this app ready to takeover the device audio
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             try AVAudioSession.sharedInstance().setActive(true)
+            // change fileTypeHint according to the type of your audio file
             
-            /// change fileTypeHint according to the type of your audio file (you can omit this)
-            
-            /// for iOS 11 onward, use :
+            // for iOS 11 onward, use :
             AudioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
             AudioPlayer!.prepareToPlay()
             AudioPlayer!.numberOfLoops = -1
@@ -166,7 +164,6 @@ class CardViewController: UIViewController {
                         self.score+=100
                         self.bingoNumber+=1
                         
-                        //print("bingoNumber=\(bingoNumber)")
                         if(self.bingoNumber >= 10){
                             self.timer.invalidate()
                             self.gameStep=0
@@ -174,7 +171,7 @@ class CardViewController: UIViewController {
                             for i in 0...(self.CardBt.count-1){
                                 self.CardBt[i].setImage(self.CardImage[self.theme][self.AnswerCard[i]],for: UIControlState.normal)
                                 self.CardBt[i].backgroundColor = UIColor(red: 1.0, green: 0.9, blue: 0.9, alpha: 1.0)
-                                self.CardBt[i].isEnabled = true
+                                self.CardBt[i].isEnabled = false
                             }
                             
                             
@@ -184,6 +181,10 @@ class CardViewController: UIViewController {
                             let total = self.score - Int(self.counter)
                             self.resultLable.isHidden=false
                             self.resultLable.text=String(format: "Good Job!\n\nTime Cosumed\n%02d:%02d.%01d\n\nScore\n%d\n\nTotal\n%d", minutesLeft ,secondsLeft, minisecondsLeft,self.score,total)
+                            // disable card flipping after game over
+                            /*for bt in self.CardBt{
+                                bt.isEnabled=false
+                            }*/
                         }
                     }else{
                         self.score-=10
@@ -224,21 +225,22 @@ class CardViewController: UIViewController {
     
     func creatTopic(){
         var cardBuf:[Int] = [Int]()
+        // GKRandomDistribution avoids Int32 transformation of arc4random_uniform
         let randomDistribution1 = GKRandomDistribution(lowestValue: 0, highestValue: CardImage.count - 1)
         theme = randomDistribution1.nextInt()
         
         let randomDistribution2 = GKShuffledDistribution(lowestValue: 1, highestValue:CardImage[theme].count-1)
-        //產生十個問題index
+        // Generate 10 distinct indexes
         for _ in 0...9{
             cardBuf.append(randomDistribution2.nextInt())
         }
         
-        //copy 十個問題index
+        // duplicate the first 10 distinct indexes
         for i in 0...9{
             cardBuf.append(cardBuf[i])
         }
         
-        //亂數排序問題
+        // reshuffle total 20 indexes
         AnswerCard.removeAll()
         let randomDistribution3 = GKShuffledDistribution(lowestValue: 0, highestValue:cardBuf.count-1)
         for _ in 0...(cardBuf.count-1){
@@ -253,28 +255,24 @@ class CardViewController: UIViewController {
         
         countdownLable.isHidden=false
         
-
-        timer.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         timeLable.text = String(format: "Time\n%02d:%02d.%01d", 0 ,0, 0)
         scoreLable.text = String(format: "Score\n%04d", 0)
+        timer.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         
           for i in 0...(CardBt.count-1){
 //            CardBt[i].setImage(CardImage[theme][0],for: UIControlState.normal)
             CardBt[i].setImage(CardImage[theme][AnswerCard[i]],for: UIControlState.normal)
             CardBt[i].backgroundColor = UIColor(red: 1.0, green: 0.9, blue: 0.9, alpha: 1.0)
-            CardBt[i].isEnabled=true
-            
-            if(theme == 3){
+            // disable card flipping before finishing countdown
+            CardBt[i].isEnabled=false
+            /*if(theme == 3){
                 CardBt[i].imageView!.contentMode = UIViewContentMode.scaleToFill
-            }else{
+            }else{*/
                 CardBt[i].imageView!.contentMode = UIViewContentMode.scaleAspectFit
-            }
+            //}
         }
 
-        for bt in CardBt{
-            bt.isEnabled=true
-        }
     }
     
     @objc func updateTimer() {
@@ -292,6 +290,10 @@ class CardViewController: UIViewController {
                CardBt[i].setImage(CardImage[theme][0],for: UIControlState.normal)
             }
             countdownLable.isHidden=true
+            // enable card flipping when finishing countdown
+            for bt in CardBt{
+                bt.isEnabled=true
+            }
         }
         else{
              countdownLable.text = String(5 - Int(counter))
@@ -305,17 +307,12 @@ class CardViewController: UIViewController {
         }
         
         do {
-            /// this codes for making this app ready to takeover the device audio
+            // this codes for making this app ready to takeover the device audio
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             try AVAudioSession.sharedInstance().setActive(true)
-            
-            /// change fileTypeHint according to the type of your audio file (you can omit this)
-            
-            /// for iOS 11 onward, use :
+            // change fileTypeHint according to the type of your audio file
+            // for iOS 11 onward, use :
             FlippingSound = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-            
-            /// else :
-            /// FlippingSound = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3)
             
             // no need for prepareToPlay because prepareToPlay is happen automatically when calling play()
             FlippingSound!.play()

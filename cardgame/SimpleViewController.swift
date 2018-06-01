@@ -99,13 +99,13 @@ class SimpleViewController: UIViewController {
         }
         
         do {
-            /// this codes for making this app ready to takeover the device audio
+            // this codes for making this app ready to takeover the device audio
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             try AVAudioSession.sharedInstance().setActive(true)
             
-            /// change fileTypeHint according to the type of your audio file (you can omit this)
+            // change fileTypeHint according to the type of your audio file
             
-            /// for iOS 11 onward, use :
+            // for iOS 11 onward, use :
             AudioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
             AudioPlayer!.prepareToPlay()
             AudioPlayer!.numberOfLoops = -1
@@ -146,6 +146,7 @@ class SimpleViewController: UIViewController {
                 self.firstCard = cardNumber
                 self.CardBt[self.firstCard].setImage(self.CardImage[self.theme][self.AnswerCard[self.firstCard]],for: UIControlState.normal)
                 self.gameStep=2
+                //self.CardBt[self.firstCard].isEnabled=false
             case 2:
                 if(self.firstCard != cardNumber){
                     self.secondCard = cardNumber
@@ -163,7 +164,7 @@ class SimpleViewController: UIViewController {
                             for i in 0...(self.CardBt.count-1){
                                 self.CardBt[i].setImage(self.CardImage[self.theme][self.AnswerCard[i]],for: UIControlState.normal)
                                 self.CardBt[i].backgroundColor = UIColor(red: 1.0, green: 0.9, blue: 0.9, alpha: 1.0)
-                                self.CardBt[i].isEnabled = true
+                                self.CardBt[i].isEnabled = false
                             }
                             
                             
@@ -173,12 +174,18 @@ class SimpleViewController: UIViewController {
                             let total = self.score - Int(self.counter)
                             self.resultLable.isHidden=false
                             self.resultLable.text=String(format: "Good Job!\nTime Cosumed\n%02d:%02d.%01d\n\nScore\n%d\n\nTotal\n%d", minutesLeft ,secondsLeft, minisecondsLeft,self.score,total)
+                            /*for bt in self.CardBt{
+                                bt.isEnabled=false
+                            }*/
                         }
                     }else{
                         self.score-=10
                     }
                     self.scoreLable.text = String(format: "Score\n%04d", self.score)
                 }
+                /*else{
+                    self.CardBt[self.firstCard].isEnabled=false
+                }*/
                 
             case 3:
                 if(self.AnswerCard[self.firstCard] == self.AnswerCard[self.secondCard]){
@@ -192,6 +199,7 @@ class SimpleViewController: UIViewController {
                     if((cardNumber != self.firstCard) && (cardNumber != self.secondCard)){
                         self.firstCard = cardNumber
                         self.CardBt[self.firstCard].setImage(self.CardImage[self.theme][self.AnswerCard[self.firstCard]],for: UIControlState.normal)
+                        //self.CardBt[self.firstCard].isEnabled=false
                         self.gameStep=2
                     }
                 }else{
@@ -217,17 +225,17 @@ class SimpleViewController: UIViewController {
         theme = randomDistribution1.nextInt()
         
         let randomDistribution2 = GKShuffledDistribution(lowestValue: 1, highestValue:CardImage[theme].count-1)
-        //產生六個問題index
+        // Generate 10 distinct indexes
         for _ in 0...5{
             cardBuf.append(randomDistribution2.nextInt())
         }
         
-        //copy 六個問題index
+        // duplicate the first 10 distinct indexes
         for i in 0...5{
             cardBuf.append(cardBuf[i])
         }
         
-        //亂數排序問題
+        // reshuffle total 20 indexes
         AnswerCard.removeAll()
         let randomDistribution3 = GKShuffledDistribution(lowestValue: 0, highestValue:cardBuf.count-1)
         for _ in 0...(cardBuf.count-1){
@@ -252,18 +260,18 @@ class SimpleViewController: UIViewController {
             //            CardBt[i].setImage(CardImage[theme][0],for: UIControlState.normal)
             CardBt[i].setImage(CardImage[theme][AnswerCard[i]],for: UIControlState.normal)
             CardBt[i].backgroundColor = UIColor(red: 1.0, green: 0.9, blue: 0.9, alpha: 1.0)
-            CardBt[i].isEnabled=true
+            CardBt[i].isEnabled=false
             
-            if(theme == 3){
-                CardBt[i].imageView!.contentMode = UIViewContentMode.scaleToFill
-            }else{
-                CardBt[i].imageView!.contentMode = UIViewContentMode.scaleAspectFit
-            }
+            /*if(theme == 3){
+             CardBt[i].imageView!.contentMode = UIViewContentMode.scaleToFill
+             }else{*/
+            CardBt[i].imageView!.contentMode = UIViewContentMode.scaleAspectFit
+            //}
         }
         
-        for bt in CardBt{
-            bt.isEnabled=true
-        }
+        /*for bt in CardBt{
+            bt.isEnabled=false
+        }*/
     }
     
     @objc func updateTimer() {
@@ -281,6 +289,9 @@ class SimpleViewController: UIViewController {
                 CardBt[i].setImage(CardImage[theme][0],for: UIControlState.normal)
             }
             countdownLable.isHidden=true
+            for bt in CardBt{
+                bt.isEnabled=true
+            }
         }
         else{
             countdownLable.text = String(5 - Int(counter))
