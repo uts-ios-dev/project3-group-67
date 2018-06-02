@@ -102,6 +102,9 @@ class CardViewController: UIViewController {
         baseBG.image = #imageLiteral(resourceName: "BaseBG")
 
         CardBt = [CardBt1, CardBt2, CardBt3, CardBt4, CardBt5, CardBt6, CardBt7, CardBt8, CardBt9, CardBt10, CardBt11, CardBt12, CardBt13, CardBt14, CardBt15, CardBt16, CardBt17, CardBt18, CardBt19, CardBt20]
+        for Bt in CardBt {
+            Bt.adjustsImageWhenDisabled=false
+        }
         guard let url = Bundle.main.url(forResource: "Game", withExtension: "mp3") else {
             print("url not found")
             return
