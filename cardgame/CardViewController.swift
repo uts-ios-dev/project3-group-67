@@ -41,7 +41,8 @@ class CardViewController: UIViewController {
     var AudioPlayer: AVAudioPlayer?
     var FlippingSound: AVAudioPlayer?
     var CardBt : [UIButton] = [UIButton]()
-    //
+    
+    // 3 themes: Animals, Vegetables, Fruits
     let CardImage: [[UIImage]] = [
         [
             UIImage(named: "background.png")!,
@@ -84,7 +85,7 @@ class CardViewController: UIViewController {
         ],
     ]
 
-    
+    // Initialize
     var AnswerCard: [Int] = [Int]()
     var gameStep:Int = 0
     var firstCard:Int = 0
@@ -100,8 +101,9 @@ class CardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         baseBG.image = #imageLiteral(resourceName: "BaseBG")
-
         CardBt = [CardBt1, CardBt2, CardBt3, CardBt4, CardBt5, CardBt6, CardBt7, CardBt8, CardBt9, CardBt10, CardBt11, CardBt12, CardBt13, CardBt14, CardBt15, CardBt16, CardBt17, CardBt18, CardBt19, CardBt20]
+        
+        // avoid adjusting button image when the button is disabled
         for Bt in CardBt {
             Bt.adjustsImageWhenDisabled=false
         }
@@ -111,10 +113,9 @@ class CardViewController: UIViewController {
         }
         
         do {
-            /// this codes for making this app ready to takeover the device audio
+            // this codes for making this app ready to takeover the device audio
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             try AVAudioSession.sharedInstance().setActive(true)
-            // change fileTypeHint according to the type of your audio file
             
             // for iOS 11 onward, use :
             AudioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
@@ -149,6 +150,8 @@ class CardViewController: UIViewController {
                 break
             }
         }
+        
+        // enable card flipping animation
         UIView.transition(with: sender, duration: 0.2, options: .transitionFlipFromLeft, animations: {
             sender.setImage(UIImage(named:"bg_front"), for: .normal)
         }) { (finished) in
@@ -157,6 +160,7 @@ class CardViewController: UIViewController {
                 self.firstCard = cardNumber
                 self.CardBt[self.firstCard].setImage(self.CardImage[self.theme][self.AnswerCard[self.firstCard]],for: UIControlState.normal)
                 self.gameStep=2
+               // disable touch event of the first card
                 self.CardBt[self.firstCard].isEnabled=false
             case 2:
                 if(self.firstCard != cardNumber){
@@ -168,17 +172,19 @@ class CardViewController: UIViewController {
                         self.score+=100
                         self.bingoNumber+=1
                         
+                        // detect the end of the game
                         if(self.bingoNumber >= 10){
                             self.timer.invalidate()
                             self.gameStep=0
                             
+                            // display all cards when game over
                             for i in 0...(self.CardBt.count-1){
                                 self.CardBt[i].setImage(self.CardImage[self.theme][self.AnswerCard[i]],for: UIControlState.normal)
                                 self.CardBt[i].backgroundColor = UIColor(red: 1.0, green: 0.9, blue: 0.9, alpha: 1.0)
                                 self.CardBt[i].isEnabled = false
                             }
                             
-                            
+                            // display result label
                             let minutesLeft = Int(self.counter / 60) % 60
                             let secondsLeft = Int(self.counter) % 60
                             let minisecondsLeft = Int(self.counter*10) % 10
@@ -186,6 +192,8 @@ class CardViewController: UIViewController {
                             self.resultLable.isHidden=false
                             let attributedStrM : NSMutableAttributedString = NSMutableAttributedString()
                             let textAttachment : NSTextAttachment = NSTextAttachment()
+                            
+                            // three-star ranking based on total scores
                             if (total>=950) {
                                 textAttachment.image = #imageLiteral(resourceName: "threeStar")
                             } else if (total>=850){
@@ -222,6 +230,7 @@ class CardViewController: UIViewController {
                 }
                 
             case 3:
+                // make the bingo cards disappear
                 if(self.AnswerCard[self.firstCard] == self.AnswerCard[self.secondCard]){
                     self.CardBt[self.firstCard].backgroundColor = UIColor(red: 1.0, green: 0.9, blue: 0.9, alpha: 0.0)
                     self.CardBt[self.firstCard].setImage(nil,for: UIControlState.normal)
@@ -292,16 +301,11 @@ class CardViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         
           for i in 0...(CardBt.count-1){
-//            CardBt[i].setImage(CardImage[theme][0],for: UIControlState.normal)
             CardBt[i].setImage(CardImage[theme][AnswerCard[i]],for: UIControlState.normal)
             CardBt[i].backgroundColor = UIColor(red: 1.0, green: 0.9, blue: 0.9, alpha: 1.0)
             // disable card flipping before finishing countdown
             CardBt[i].isEnabled=false
-            /*if(theme == 3){
-                CardBt[i].imageView!.contentMode = UIViewContentMode.scaleToFill
-            }else{*/
                 CardBt[i].imageView!.contentMode = UIViewContentMode.scaleAspectFit
-            //}
         }
 
     }
@@ -330,7 +334,7 @@ class CardViewController: UIViewController {
              countdownLable.text = String(5 - Int(counter))
         }
     }
-    
+    // sound effect when flipping card
     func playSound(){
         guard let url = Bundle.main.url(forResource: "Flipping", withExtension: "mp3") else {
             print("url not found")
@@ -341,11 +345,10 @@ class CardViewController: UIViewController {
             // this codes for making this app ready to takeover the device audio
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             try AVAudioSession.sharedInstance().setActive(true)
-            // change fileTypeHint according to the type of your audio file
+
             // for iOS 11 onward, use :
             FlippingSound = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
             
-            // no need for prepareToPlay because prepareToPlay is happen automatically when calling play()
             FlippingSound!.play()
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
