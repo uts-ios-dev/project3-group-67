@@ -184,7 +184,33 @@ class CardViewController: UIViewController {
                             let minisecondsLeft = Int(self.counter*10) % 10
                             let total = self.score - Int(self.counter)
                             self.resultLable.isHidden=false
-                            self.resultLable.text=String(format: "Good Job!\n\nTime Cosumed\n%02d:%02d.%01d\n\nScore\n%d\n\nTotal\n%d", minutesLeft ,secondsLeft, minisecondsLeft,self.score,total)
+                            let attributedStrM : NSMutableAttributedString = NSMutableAttributedString()
+                            let textAttachment : NSTextAttachment = NSTextAttachment()
+                            if (total>=950) {
+                                textAttachment.image = #imageLiteral(resourceName: "threeStar")
+                            } else if (total>=850){
+                                textAttachment.image = #imageLiteral(resourceName: "twoStar")
+                            }else {
+                                textAttachment.image = #imageLiteral(resourceName: "oneStar")
+                            }
+                            textAttachment.bounds = CGRect(x: 0, y: 0, width: self.view.frame.width/2, height: self.view.frame.width/4.2)
+                            let timeConsumed = String(format:"%02d:%02d.%01d",minutesLeft ,secondsLeft, minisecondsLeft)
+                            let scoreShown = String(format:"%d",self.score)
+                            let totalScoreShown = String(format:"%d",total)
+                            let subString1 : NSAttributedString = NSAttributedString(string:"\nTime Cosumed\n")
+                            let subString2 : NSAttributedString = NSAttributedString(string:timeConsumed)
+                            let subString3 : NSAttributedString = NSAttributedString(string:"\n\nScore\n")
+                            let subString4 : NSAttributedString = NSAttributedString(string:scoreShown)
+                            let subString5 : NSAttributedString = NSAttributedString(string:"\n\nTotal\n")
+                            let subString6 : NSAttributedString = NSAttributedString(string:totalScoreShown)
+                            attributedStrM.append(NSAttributedString(attachment: textAttachment))
+                            attributedStrM.append(subString1)
+                            attributedStrM.append(subString2)
+                            attributedStrM.append(subString3)
+                            attributedStrM.append(subString4)
+                            attributedStrM.append(subString5)
+                            attributedStrM.append(subString6)
+                            self.resultLable.attributedText=attributedStrM
                         }else{
                             self.CardBt[self.firstCard].isEnabled=true
                         }
