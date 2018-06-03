@@ -157,6 +157,7 @@ class CardViewController: UIViewController {
                 self.firstCard = cardNumber
                 self.CardBt[self.firstCard].setImage(self.CardImage[self.theme][self.AnswerCard[self.firstCard]],for: UIControlState.normal)
                 self.gameStep=2
+                self.CardBt[self.firstCard].isEnabled=false
             case 2:
                 if(self.firstCard != cardNumber){
                     self.secondCard = cardNumber
@@ -184,13 +185,12 @@ class CardViewController: UIViewController {
                             let total = self.score - Int(self.counter)
                             self.resultLable.isHidden=false
                             self.resultLable.text=String(format: "Good Job!\n\nTime Cosumed\n%02d:%02d.%01d\n\nScore\n%d\n\nTotal\n%d", minutesLeft ,secondsLeft, minisecondsLeft,self.score,total)
-                            // disable card flipping after game over
-                            /*for bt in self.CardBt{
-                                bt.isEnabled=false
-                            }*/
+                        }else{
+                            self.CardBt[self.firstCard].isEnabled=true
                         }
                     }else{
                         self.score-=10
+                        self.CardBt[self.firstCard].isEnabled=true
                     }
                     self.scoreLable.text = String(format: "Score\n%04d", self.score)
                 }
@@ -207,6 +207,7 @@ class CardViewController: UIViewController {
                     if((cardNumber != self.firstCard) && (cardNumber != self.secondCard)){
                         self.firstCard = cardNumber
                         self.CardBt[self.firstCard].setImage(self.CardImage[self.theme][self.AnswerCard[self.firstCard]],for: UIControlState.normal)
+                        self.CardBt[self.firstCard].isEnabled=false
                         self.gameStep=2
                     }
                 }else{
@@ -216,6 +217,7 @@ class CardViewController: UIViewController {
                     
                     self.firstCard = cardNumber
                     self.CardBt[self.firstCard].setImage(self.CardImage[self.theme][self.AnswerCard[self.firstCard]],for: UIControlState.normal)
+                    self.CardBt[self.firstCard].isEnabled=false
                     self.gameStep=2
                 }
                 

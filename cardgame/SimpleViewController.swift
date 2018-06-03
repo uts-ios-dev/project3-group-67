@@ -149,7 +149,7 @@ class SimpleViewController: UIViewController {
                 self.firstCard = cardNumber
                 self.CardBt[self.firstCard].setImage(self.CardImage[self.theme][self.AnswerCard[self.firstCard]],for: UIControlState.normal)
                 self.gameStep=2
-                //self.CardBt[self.firstCard].isEnabled=false
+                self.CardBt[self.firstCard].isEnabled=false
             case 2:
                 if(self.firstCard != cardNumber){
                     self.secondCard = cardNumber
@@ -177,18 +177,15 @@ class SimpleViewController: UIViewController {
                             let total = self.score - Int(self.counter)
                             self.resultLable.isHidden=false
                             self.resultLable.text=String(format: "Good Job!\nTime Cosumed\n%02d:%02d.%01d\n\nScore\n%d\n\nTotal\n%d", minutesLeft ,secondsLeft, minisecondsLeft,self.score,total)
-                            /*for bt in self.CardBt{
-                                bt.isEnabled=false
-                            }*/
+                        } else {
+                            self.CardBt[self.firstCard].isEnabled=true
                         }
                     }else{
                         self.score-=10
+                        self.CardBt[self.firstCard].isEnabled=true
                     }
                     self.scoreLable.text = String(format: "Score\n%04d", self.score)
                 }
-                /*else{
-                    self.CardBt[self.firstCard].isEnabled=false
-                }*/
                 
             case 3:
                 if(self.AnswerCard[self.firstCard] == self.AnswerCard[self.secondCard]){
@@ -202,7 +199,7 @@ class SimpleViewController: UIViewController {
                     if((cardNumber != self.firstCard) && (cardNumber != self.secondCard)){
                         self.firstCard = cardNumber
                         self.CardBt[self.firstCard].setImage(self.CardImage[self.theme][self.AnswerCard[self.firstCard]],for: UIControlState.normal)
-                        //self.CardBt[self.firstCard].isEnabled=false
+                        self.CardBt[self.firstCard].isEnabled=false
                         self.gameStep=2
                     }
                 }else{
@@ -212,6 +209,7 @@ class SimpleViewController: UIViewController {
                     
                     self.firstCard = cardNumber
                     self.CardBt[self.firstCard].setImage(self.CardImage[self.theme][self.AnswerCard[self.firstCard]],for: UIControlState.normal)
+                    self.CardBt[self.firstCard].isEnabled=false
                     self.gameStep=2
                 }
                 
