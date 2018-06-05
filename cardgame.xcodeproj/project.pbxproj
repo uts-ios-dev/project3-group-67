@@ -11,6 +11,7 @@
 		A876044720BD696000F4BEB1 /* Game.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A876044520BD696000F4BEB1 /* Game.mp3 */; };
 		A876044820BD696000F4BEB1 /* Home.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A876044620BD696000F4BEB1 /* Home.mp3 */; };
 		A876044C20BD71DE00F4BEB1 /* Flipping.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A876044B20BD71DE00F4BEB1 /* Flipping.mp3 */; };
+		A89AB04F20C67C360002499C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A89AB04E20C67C360002499C /* Default-568h@2x.png */; };
 		D990401B20753FDB00A47F56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D990401A20753FDB00A47F56 /* AppDelegate.swift */; };
 		D990401D20753FDB00A47F56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D990401C20753FDB00A47F56 /* ViewController.swift */; };
 		D990402020753FDB00A47F56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D990401E20753FDB00A47F56 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		A876044520BD696000F4BEB1 /* Game.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Game.mp3; sourceTree = "<group>"; };
 		A876044620BD696000F4BEB1 /* Home.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Home.mp3; sourceTree = "<group>"; };
 		A876044B20BD71DE00F4BEB1 /* Flipping.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Flipping.mp3; sourceTree = "<group>"; };
+		A89AB04E20C67C360002499C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D990401720753FDB00A47F56 /* cardgame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cardgame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D990401A20753FDB00A47F56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D990401C20753FDB00A47F56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		D990400E20753FDB00A47F56 = {
 			isa = PBXGroup;
 			children = (
+				A89AB04E20C67C360002499C /* Default-568h@2x.png */,
 				D990401920753FDB00A47F56 /* cardgame */,
 				D990402E20753FDB00A47F56 /* cardgameTests */,
 				D990403920753FDB00A47F56 /* cardgameUITests */,
@@ -252,6 +255,7 @@
 				A876044720BD696000F4BEB1 /* Game.mp3 in Resources */,
 				A876044820BD696000F4BEB1 /* Home.mp3 in Resources */,
 				D990402020753FDB00A47F56 /* Main.storyboard in Resources */,
+				A89AB04F20C67C360002499C /* Default-568h@2x.png in Resources */,
 				A876044C20BD71DE00F4BEB1 /* Flipping.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
