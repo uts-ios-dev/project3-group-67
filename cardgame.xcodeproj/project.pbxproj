@@ -449,7 +449,7 @@
 		D990404020753FDB00A47F56 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TXA5XBT328;
 				INFOPLIST_FILE = cardgame/Info.plist;
@@ -465,7 +465,7 @@
 		D990404120753FDB00A47F56 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TXA5XBT328;
 				INFOPLIST_FILE = cardgame/Info.plist;
